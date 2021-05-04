@@ -223,6 +223,19 @@ TEST_SUITE("Decoder"){
     }
 
     /* YOUR CODE HERE */
+    TEST_CASE("VARIANT-TASK"){
+        SUBCASE("LUI"){
+            Word data = 0b10000000000000000001111110110111;
+            Word test_imm = 0b10000000000000000001;
+            Word test_dst = 0b11111;
+            auto instruction = _decoder.Decode(data);
+            
+            CHECK(instruction->_imm.value() == test_imm << 12u);
+            CHECK(instruction->_dst.value() == test_dst);
+            CHECK(instruction->_type == IType::Alu);
+            CHECK(instruction->_aluFunc == AluFunc::Add);
+        }
+    }
 }
 
 void testBranch(InstructionPtr &instruction){

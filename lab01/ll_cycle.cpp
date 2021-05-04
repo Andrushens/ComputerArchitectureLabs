@@ -8,7 +8,12 @@ bool ll_has_cycle(node *head) {
     {
         rabbit = rabbit->next->next;
         turtle = turtle->next;
-        if(rabbit == turtle) return true;
+
+        if(rabbit == turtle) 
+        {
+            return true;
+        }
     }
+
     return false;
 }

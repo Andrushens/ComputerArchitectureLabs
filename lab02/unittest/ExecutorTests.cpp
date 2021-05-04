@@ -236,7 +236,18 @@ TEST_SUITE("Executor"){
 
         }
     }
+    
     /* YOUR CODE HERE */
+    TEST_CASE("VARIANT-TASK"){
+        SUBCASE("LUI"){
+            Word data = 0b111000010110111;
+            Word test_imm = 0b111;
+            auto instruction = _decoder.Decode(data);
+            
+            testU(instruction, _exe);
+            CHECK_EQ(instruction->_data, test_imm << 12u);
+        }
+    }
 }
 
 void testAlu(InstructionPtr &instruction, Executor &exe){

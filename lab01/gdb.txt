@@ -1,5 +1,5 @@
 1.set args [arguments]
-2.break [num of string/func name]
+2.break [num of string]
 3.next
 4.step
 5.continue
