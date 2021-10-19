@@ -1,0 +1,9 @@
+1.set args [arguments]
+2.break [num of string]
+3.next
+4.step
+5.continue
+6.print [expression/var's name]
+7.display [var's name]
+8.info locals
+9.quit
